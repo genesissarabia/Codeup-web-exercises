@@ -114,9 +114,54 @@ alert("Here's your animal color fact: " + analyzeColor(pickAColor));
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-function calculateTotal(luckyNumber){
-    switch luckyNumber {
 
+//If you get 0- 0% discount
+//If you get 1, 10% discount
+//If you get 2, 25% discount
+//If you get 3, 35% discount
+//If you get 4, 50% discount
+//If you get 5, 100% discount-- FREE!
+
+//function calculateTotal(luckyNumber, cartTotal){
+//    if (luckyNumber === 0) {
+//        return cartTotal - (cartTotal * 0);
+//    } else if (luckyNumber === 1) {
+//        return cartTotal - (cartTotal * 0.10);
+//    } else if (luckyNumber === 2) {
+//        return cartTotal - (cartTotal * 0.25);
+//    } else if (luckyNumber === 3) {
+//        return cartTotal - (cartTotal * 0.35);
+//    } else if (luckyNumber === 4) {
+//        return cartTotal -(cartTotal * 0.50);
+//    } else if (luckyNumber === 5) {
+//        return cartTotal - cartTotal;
+//    } else {
+//        return "Please enter a number from 0-5."
+//    }
+//}
+
+function calculateTotal(luckyNumber, cartTotal) {
+    switch (luckyNumber) {
+        case 0:
+            return cartTotal - cartTotal * 0;
+            break;
+        case 1:
+            return cartTotal - cartTotal * 0.10;
+            break;
+        case 2:
+            return cartTotal - (cartTotal * 0.25);
+            break;
+        case 3:
+            return cartTotal - (cartTotal * 0.35);
+            break;
+        case 4:
+            return cartTotal - (cartTotal * 0.50);
+            break;
+        case 5:
+            return cartTotal - cartTotal;
+            break;
+        default:
+            return "Please enter a number from 0-5";
     }
 }
 /**
