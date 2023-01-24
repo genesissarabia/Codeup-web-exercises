@@ -173,7 +173,15 @@ function calculateTotal(luckyNumber, cartTotal) {
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+ var luckyNumber = Math.floor(Math.random() * 6);
+alert("Thank you for shopping on our website today! Enter in our sweepstakes" +
+    " for your chance to win a discount on your shopping cart! Please click" +
+    " 'OK' to continue.");
+var whatsTheCart = prompt("Please enter your shopping cart total.");
+alert("Here is your generated lucky number! " + luckyNumber);
+alert("Your shopping cart total prior to discount is: $" + whatsTheCart + ". Based on" +
+    " your lucky number, your discounted shopping cart total is:  $" +
+    calculateTotal(luckyNumber, whatsTheCart));
 
 /**
  * TODO:
@@ -193,3 +201,4 @@ function calculateTotal(luckyNumber, cartTotal) {
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
