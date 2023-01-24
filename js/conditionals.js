@@ -173,7 +173,7 @@ function calculateTotal(luckyNumber, cartTotal) {
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
- var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
 alert("Thank you for shopping on our website today! Enter in our sweepstakes" +
     " for your chance to win a discount on your shopping cart! Please click" +
     " 'OK' to continue.");
@@ -202,3 +202,13 @@ alert("Your shopping cart total prior to discount is: $" + whatsTheCart + ". Bas
  * HINT: The way we prompt for a value could be improved
  */
 
+var wantANumberFact= confirm("Would you like to pick a number for number" +
+    " facts?");
+var pickANumber= prompt("Enter any number of your choice!");
+var isOddOrEven= (wantANumberFact % 2 === 0) ? "Even!" : "Odd!";
+alert("You picked the number: " + pickANumber + ". Is the number you picked" +
+    " odd" +
+    " or even? And the result is: " + isOddOrEven);
+var plusOneHundred = parseInt(pickANumber) + 100;
+alert("You picked the number: " + pickANumber + ". The number plus One" +
+    " Hundred is: " + plusOneHundred + ".");
