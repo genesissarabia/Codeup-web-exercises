@@ -209,18 +209,19 @@ function numberFacts(wantANumberFact) {
     if (wantANumberFact === true) {
 
         var pickANumber = prompt("Enter any number of your choice!");
-        var isOddOrEven = (wantANumberFact % 2 === 0) ? "Even!" : "Odd! Or" +
-            " if you picked 0-- zero can't be odd or even!";
+        var isOddOrEven = (pickANumber % 2 === 0) ? "Even!" : "Odd!"
         alert("You picked the number: " + pickANumber + ". Is the number you picked" +
             " odd or even? Your number is: " + isOddOrEven);
         var plusOneHundred = parseInt(pickANumber) + 100;
         alert("Your number plus 100 is: " + plusOneHundred + ".");
-        var positiveOrNegative = (pickANumber > 0) ? "Positive" : "Negative." +
-        " Or if you picked zero-- 0 can be neither positive or negative.";
-        alert("Your number is " + positiveOrNegative);
+        if (pickANumber > 0){
+            return alert("Your number is positive")
+        } else if (pickANumber < 0){
+            return alert("Your number is negative")
+        } else {
+            return alert("0 is neither positive or negative")
+        }
     } else if (wantANumberFact === false) {
         return alert("Oh gotcha, no number facts for you then.")
     }
 }
-console.log(wantANumberFact)
-numberFacts(wantANumberFact);
