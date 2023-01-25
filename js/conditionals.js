@@ -201,14 +201,26 @@ alert("Your shopping cart total prior to discount is: $" + whatsTheCart + ". Bas
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+var wantANumberFact = confirm("Would you like to pick a number to receive" +
+    " number facts? If yes, click 'OK' to continue with receiving your" +
+    " facts, if not just click 'Cancel'.");
 
-var wantANumberFact= confirm("Would you like to pick a number for number" +
-    " facts?");
-var pickANumber= prompt("Enter any number of your choice!");
-var isOddOrEven= (wantANumberFact % 2 === 0) ? "Even!" : "Odd!";
-alert("You picked the number: " + pickANumber + ". Is the number you picked" +
-    " odd" +
-    " or even? And the result is: " + isOddOrEven);
-var plusOneHundred = parseInt(pickANumber) + 100;
-alert("You picked the number: " + pickANumber + ". The number plus One" +
-    " Hundred is: " + plusOneHundred + ".");
+function numberFacts(wantANumberFact) {
+    if (wantANumberFact === true) {
+
+        var pickANumber = prompt("Enter any number of your choice!");
+        var isOddOrEven = (wantANumberFact % 2 === 0) ? "Even!" : "Odd! Or" +
+            " if you picked 0-- zero can't be odd or even!";
+        alert("You picked the number: " + pickANumber + ". Is the number you picked" +
+            " odd or even? Your number is: " + isOddOrEven);
+        var plusOneHundred = parseInt(pickANumber) + 100;
+        alert("Your number plus 100 is: " + plusOneHundred + ".");
+        var positiveOrNegative = (pickANumber > 0) ? "Positive" : "Negative." +
+        " Or if you picked zero-- 0 can be neither positive or negative.";
+        alert("Your number is " + positiveOrNegative);
+    } else if (wantANumberFact === false) {
+        return alert("Oh gotcha, no number facts for you then.")
+    }
+}
+console.log(wantANumberFact)
+numberFacts(wantANumberFact);
