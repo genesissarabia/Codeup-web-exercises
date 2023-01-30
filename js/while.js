@@ -8,8 +8,9 @@ while (i<=65000){
     i++;
 }
 
+console.log("End of While Loop exercise.")
 //do-while loop
-
+console.log("Beginning of Do-While Loop exercise.")
 
 var allCones = Math.floor(Math.random() * 50) + 50;
 
