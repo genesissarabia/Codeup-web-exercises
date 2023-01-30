@@ -30,7 +30,7 @@ console.log(names[3]);
      * array.
      */
 for (var i=0; i < names.length; i++){
-    console.log("The name at index " + i + " is " + names[i]);
+    console.log("Index " + i + " item is: " + names[i]);
 }
     /**
      * TODO:
