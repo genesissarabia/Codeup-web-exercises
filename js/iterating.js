@@ -53,4 +53,24 @@ names.forEach(function (name){
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
+var x = [1, 2, 3, 4, 5];
+function first(x){
+    return x[0];
+    }
+
+console.log(first(x));
+
+function second(x){
+    return x[1];
+}
+
+console.log(second(x));
+
+function last(x){
+    var l = x[x.length-1];
+    return l;
+}
+
+console.log(last(x));
+
 })();
