@@ -24,16 +24,42 @@
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
-   /* var planetsBreak = "<br>Mercury</br><br>Venus</br><br>Earth</br><br>Mars</br><br>Jupiter</br><br>Saturn</br><br>Uranus</br>";*/
 
      planetsArray.forEach (function (planets){
         console.log(planets + "<br>");
     });
 
-   /*
+    var pups = ['Roxy', 'Ordekie', 'Kazzy', 'Suzy'];
 
-    console.log(planetsBreak);
-document.body.innerHTML += planetsBreak;
-    console.log(document.body.innerHTML);*/
+    var pupsUnorderedList = document.createElement('ul');
+
+    pups.forEach(function (doggos){
+        var li = document.createElement('li');
+        li.textContent = doggos;
+        pupsUnorderedList.appendChild(li);
+    });
+
+    console.log(pupsUnorderedList)
+    var app = document.querySelector('#app')
+    // app.appendChild(pupsUnorderedList); (couldn't get this to work so it
+    // could show on the HTML document, it said that it was null?
+
+//     console.log(planetsArray);
+// document.body.innerHTML += planetsArray;
+//     console.log(document.body.innerHTML);
+
 
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
