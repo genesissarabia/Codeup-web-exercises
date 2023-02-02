@@ -193,4 +193,13 @@ bookList.forEach(function (book) {
      *   `showBookInfo` function.
      */
 
+    function createBook(title, author) {
+        this.title = title;
+        this.author = author;
+    }
+const showBookInfo = new createBook("The Grapes of Wrath", "John Steinbeck");
+
+console.log(showBookInfo);
+
 })();
+
