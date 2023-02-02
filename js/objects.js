@@ -28,6 +28,8 @@ console.log(person.firstName + " " + person.lastName);
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+console.log("--------");
+
 person.sayHello = function sayHello(){
     console.log("Hello from " + person.firstName + " " + person.lastName + "!")
     }
@@ -48,26 +50,34 @@ console.log(person.sayHello());
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
+console.log("----------");
 
-//sumn along these lines is how I want to make the conditional so far.
     function hebOffer(purchase){
-        if (purchase <= 200){
-            var total = purchase/0.12;
-            return console.log(total);
+
+        if (purchase >= 200){
+            var discount = purchase * 0.12;
+            var totalWithDiscount = purchase - discount;
+            return console.log("Your purchase today is: $" + purchase.toFixed(2) + ". Because you purchased over $200 in your cart, you will receive a discount of: $" + discount.toFixed(2) +
+                ". Your total with discount is: $" + totalWithDiscount.toFixed(2));
         } else {
             //they get no discount because they didn't buy over $200, so
             // just purchase variable is returned.
-            return console.log(purchase);
+            return console.log("The total amount due for your cart" +
+                " today is: $" + purchase.toFixed(2));
+
         }
     }
 
-    console.log(hebOffer(purchase));
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    shoppers.forEach(function (shopper){
+        console.log("Hello, " + shopper.name + "!")
+        hebOffer(shopper.amount);
+    });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -81,6 +91,46 @@ console.log(person.sayHello());
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+console.log("-------------");
+
+   var books = [
+        {title: "The Grapes of Wrath",
+         author: {
+                firstName: "John",
+                lastName: "Steinbeck"
+        }
+        },
+       {title: "Brave New World",
+        author: {
+               firstName: "Aldous",
+               lastName: "Huxley",
+           }
+       },
+       {title: "Harrison Bergeron",
+        author: {
+           firstName: "Kurt",
+           lastName: "Vonnegut",
+        }
+       },
+       {title: "Unsafe at Any Speed",
+        author: {
+           firstName: "Ralph",
+           lastName: "Nader"
+        }
+       },
+       {title: "A Streetcar Named Desire",
+        author: {
+           firstName: "Tennessee",
+           lastName: "Williams"
+        }
+       }
+    ];
+
+    console.log(books[0].title);
+    console.log(books[1].author.firstName);
+    console.log(books[2].author.lastName);
+    console.log(books[3].title);
+    console.log(books[4].author.firstName);
 
     /**
      * TODO:
@@ -106,6 +156,31 @@ console.log(person.sayHello());
      *      ---
      *      ...
      */
+console.log("---------");
+
+var bookList = [
+    {
+     index: "Book #1",
+     title: "The Grapes of Wrath"   ,
+     author: "John Steinbeck"
+    },
+    {
+     index: "Book #2",
+     title: "Brave New World",
+     author: "Aldous Huxley"
+    },
+    {
+     index: "Book #3",
+     title: "Harrison Bergeron",
+     author: "Kurt Vonnegut"
+    }
+];
+
+bookList.forEach(function (book) {
+        console.log(book.index + " Title: " + book.title + " Author: " + book.author);
+});
+
+
 
     /**
      * Bonus:
