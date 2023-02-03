@@ -192,14 +192,31 @@ bookList.forEach(function (book) {
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-
+console.log("----------------------------")
     function createBook(title, author) {
-        this.title = title;
-        this.author = author;
+        return {
+            title: title,
+            author: author
+        }
     }
-const showBookInfo = new createBook("The Grapes of Wrath", "John Steinbeck");
 
-console.log(showBookInfo);
+    var bookShelf = [
+        createBook("'The Grapes of Wrath' ", "John Steinbeck"),
+        createBook("'Brave New World' ", "Aldous Huxley"),
+        createBook("'Harrison Bergeron' ", "Kurt Vonnegut")
+        ];
+
+function showBookInfo (bookShelf){
+        console.log("Title: " + bookShelf.title);
+        console.log("Author: " + bookShelf.author);
+}
+
+bookShelf.forEach(function (book){
+    showBookInfo(book);
+    console.log("------")
+    });
+
+
 
 })();
 
