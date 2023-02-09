@@ -1,4 +1,29 @@
 .fancy-header {
     color: purple; /* single line comment */
     text-decoration: underline;
+    text-align: center;
 }
+
+h2 {
+    color: lightgoldenrodyellow;
+}
+
+html {
+    background-color: antiquewhite;
+}
+
+body{
+    background-image: url("/img/pexels-quintin-gellar-313782.jpg");
+    color: white;
+    font-family: "Raleway", sans-serif;
+}
+
+footer {
+    color: white;
+}
+
+#bullet-points {
+    list-style-type: square;
+}
+
+
