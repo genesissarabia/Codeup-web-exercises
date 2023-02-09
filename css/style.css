@@ -26,4 +26,30 @@ footer {
     list-style-type: square;
 }
 
+td, tr, th {
+    padding: 1em;
+    border: 0.5em solid;
+    font-size: small
+}
+
+a:hover {
+    color: green;
+}
+a:visited {
+    color: red;
+}
+a:link {
+    color: white;
+}
+a:active {
+    color: blue;
+}
+
+img {
+    padding-left: 3em;
+    border: 1px aqua;
+    width: 250px;
+    height: 200px;
+    transform: skew(20deg);
+}
 
