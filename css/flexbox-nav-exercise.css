@@ -5,6 +5,11 @@
 body {
     box-sizing: border-box;
 }
+.container{
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
 nav {
     background: #B8B8B8;
 }
