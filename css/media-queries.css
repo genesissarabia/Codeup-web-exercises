@@ -1,6 +1,6 @@
 
 
-/*@media screen and (max-width: 720px) {*/
+@media screen and (max-width: 720px) {
 
     * {
         box-sizing: border-box;
@@ -60,7 +60,58 @@
         margin-top: 5em;
     }
 
-/*}*/
+}
 
 /*when desktop this code runs*/
 
+@media screen and (min-width: 720px){
+
+    body {
+        font-family: "Ubuntu", sans-serif;
+
+    }
+
+    h1 {
+        font-size: xxx-large;
+        width: 50%;
+        margin: 0;
+        padding: 0;
+    }
+
+    li a {
+        padding: 1em;
+    }
+    ul {
+        list-style-type: none;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+    .alert-info {
+        display: none;
+    }
+
+    #underline {
+        text-decoration: none;
+    }
+
+    .sub-section {
+        margin-top: 5em;
+        font-style: italic;
+        font-size: medium;
+    }
+
+    footer {
+        margin-top: 5em;
+    }
+
+
+
+
+}
