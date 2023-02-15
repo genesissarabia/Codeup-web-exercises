@@ -6,7 +6,6 @@ body {
     box-sizing: border-box;
 }
 .container{
-    position: relative;
     width: 100%;
     margin: auto;
 }
@@ -39,7 +38,7 @@ nav ul li {
     align-items: center;
 }
 
-nav ul li:nth-child(5) {
+nav ul li:nth-child(f5) {
     display: flex;
     margin: auto;
 }
