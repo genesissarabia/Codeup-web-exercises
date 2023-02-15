@@ -1,9 +1,66 @@
 
 
-@media screen and (max-width: 720px) {
+/*@media screen and (max-width: 720px) {*/
 
+    * {
+        box-sizing: border-box;
+    }
 
+    body {
+        font-family: "Ubuntu", sans-serif;
+    }
 
+    h1 {
+        text-align: center;
+        font-size: xxx-large;
+    }
 
+    li a {
+        display: flex;
+        background: lightgray;
+        justify-content: center;
+        padding: 1em;
+        margin-bottom: 0.5em;
+    }
+    ul {
+        list-style-type: none;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        /*justify-content: center;*/
+        padding: 0;
+        width: 100%;
+        margin: auto;
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+    .alert-info {
+        display: flex;
+        background: lightblue;
+        justify-content: center;
+        padding: 1em;
+        margin-bottom: 0.5em;
+        text-decoration: none;
+    }
 
-}
+    #underline {
+        text-decoration: none;
+    }
+
+    .sub-section {
+        margin-top: 5em;
+        font-style: italic;
+        font-size: medium;
+    }
+
+    footer {
+        margin-top: 5em;
+    }
+
+/*}*/
+
+/*when desktop this code runs*/
+
