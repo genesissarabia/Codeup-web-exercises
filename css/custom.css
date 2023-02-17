@@ -1,4 +1,8 @@
 
+body {
+    margin-bottom: 4em;
+}
+
 
 .pizza-jumbotron-box {
     background-image: url(/img/pizza.png);
@@ -17,4 +21,13 @@
     align-items: center;
     font-size: xx-large ;
     font-weight: bold;
+}
+.card-footer {
+    height: 3.5em;
+}
+#crust-next-step {
+    float: right;
+}
+#size-and-crust {
+    border: lightgray solid 1px;
 }
