@@ -42,17 +42,17 @@
       <h2>Build Your Own Pizza!</h2>
       <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="size-and-crust-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"><a href="#"><i class="fa-solid fa-circle-1"></i></a> Size and Crust</button>
+              <button class="nav-link active" id="size-and-crust-tab" data-bs-toggle="tab" data-bs-target="#size" type="button" role="tab" aria-controls="size-and-crust-tab" aria-selected="true"><a href="#"><i class="fa-solid fa-circle-1"></i></a> Size and Crust</button>
           </li>
           <li class="nav-item" role="presentation">
-              <button class="nav-link" id="cheese-and-sauce-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Cheese and Sauce</button>
+              <button class="nav-link" id="cheese-and-sauce-tab" data-bs-toggle="tab" data-bs-target="#cheese" type="button" role="tab" aria-controls="profile" aria-selected="false">Cheese and Sauce</button>
           </li>
           <li class="nav-item" role="presentation">
               <button class="nav-link" id="toppings-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Toppings</button>
           </li>
       </ul>
       <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"><div class="d-block tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <div class="tab-pane  active" id="size" role="tabpanel" aria-labelledby="nav-home-tab"><div class="d-block tab-pane active"  role="tabpanel" aria-labelledby="size-and-crust-tab">
               <span class="card-header d-block p-2 bg-primary text-white mb-3">Choose Size and Crust</span>
               <div class="card mx-3 my-3">
                   <ul class="list-group list-group-flush">
@@ -78,7 +78,7 @@
                           </ul>
                       </div>
               </div>
-              <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="home-tab">
+              <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="size-and-crust-tab-content">
 
                   <div class="card mx-3 my-3">
                       <div class="card-header" >Crispy Thin</div>
@@ -100,8 +100,20 @@
                                   Large (14")
                               </label></li>
                       </ul>
-                  </div>  </div>
-          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+                  </div>
+              </div>
+          <div class="tab-pane fade" id="cheese" role="tabpanel" aria-labelledby="cheese-and-sauce-tab-content">
+              <div class="card" style="width: 18rem;">
+                  <div class="card-header">
+                      Featured
+                  </div>
+                  <ul class="list-group list-group-flush">
+                      <li class="list-group-item">An item</li>
+                      <li class="list-group-item">A second item</li>
+                      <li class="list-group-item">A third item</li>
+                  </ul>
+              </div>
+          </div>
           <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
       </div>
       <section class="tab-content" id="size-and-crust">
@@ -111,6 +123,7 @@
               </div>
             </div>
           </div>
+
       </section>
       <section class="tab-content" id="cheese-and-toppings-tab">
 
