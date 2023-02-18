@@ -1,0 +1,37 @@
+
+
+#name {
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+#position-title {
+    font-weight: bold;
+    font-size: x-large;
+    text-align: center;
+}
+
+#intro-summary {
+    text-align: center;
+}
+#contact-info {
+    margin-bottom: 0;
+}
+#phone p {
+    text-decoration: none;
+    margin-bottom: 0;
+}
+#email p {
+    margin-bottom: 0;
+}
+#linkedin p {
+    margin-bottom: 0;
+}
+.skills-title {
+    color: #0fb784;
+    margin-bottom: 1em;
+}
+
+h6 {
+    margin-bottom: 1em;
+}
