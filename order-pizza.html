@@ -5,7 +5,6 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/3cb0df1ee3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/custom.css">
     <title>Order Pizza</title>
@@ -40,102 +39,185 @@
           <div class="bg-light p-2" style="--bs-bg-opacity: .5;" id="pizza-text-box">Welcome to Pizza World!</div>
       </div>
       <h2>Build Your Own Pizza!</h2>
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="size-and-crust-tab" data-bs-toggle="tab" data-bs-target="#size" type="button" role="tab" aria-controls="size-and-crust-tab" aria-selected="true"><a href="#"><i class="fa-solid fa-circle-1"></i></a> Size and Crust</button>
-          </li>
-          <li class="nav-item" role="presentation">
-              <button class="nav-link" id="cheese-and-sauce-tab" data-bs-toggle="tab" data-bs-target="#cheese" type="button" role="tab" aria-controls="profile" aria-selected="false">Cheese and Sauce</button>
-          </li>
-          <li class="nav-item" role="presentation">
-              <button class="nav-link" id="toppings-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Toppings</button>
-          </li>
-      </ul>
-      <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane  active" id="size" role="tabpanel" aria-labelledby="nav-home-tab"><div class="d-block tab-pane active"  role="tabpanel" aria-labelledby="size-and-crust-tab">
-              <span class="card-header d-block p-2 bg-primary text-white mb-3">Choose Size and Crust</span>
-              <div class="card mx-3 my-3">
-                  <ul class="list-group list-group-flush">
-                      <div class="card mb-3">
-                          <div class="card-header p-3" >Hand Tossed</div>
-                          <ul class="list-group list-group-flush">
-                              <!-- GARLIC CRUST TITLE-->
-                              <li class="list-group-item text-nowrap">Garlic seasoned crust with a rich, buttery taste.</li>
-                              <!--SMALL SIZE-->
-                              <li class="list-group-item">
-                                  <div class="form-check">
-                                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                      <label class="form-check-label" for="flexRadioDefault1">
-                                          Small (10")
-                                      </label>
-                                  </div>
-                              </li>
-                              <!--MEDIUM SIZE-->
-                              <li class="list-group-item"><input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                                  <label class="form-check-label" for="flexRadioDefault1">
-                                      Medium (12")
-                                  </label></li>
-                          </ul>
-                      </div>
-              </div>
-              <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="size-and-crust-tab-content">
 
-                  <div class="card mx-3 my-3">
-                      <div class="card-header" >Crispy Thin</div>
-                      <ul class="list-group list-group-flush">
-                          <!-- CRISPY TITLE-->
-                          <li class="list-group-item text-nowrap">Thin enough for optimum crispy to crunchy ratio.</li>
-                          <!--MEDIUM SIZE-->
-                          <li class="list-group-item">
-                              <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                                  <label class="form-check-label" for="flexRadioDefault1">
-                                      Medium (12")
-                                  </label>
-                              </div>
-                          </li>
-                          <!--LARGE SIZE-->
-                          <li class="list-group-item"><input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-                              <label class="form-check-label" for="flexRadioDefault1">
-                                  Large (14")
-                              </label></li>
-                      </ul>
-                  </div>
-              </div>
-          <div class="tab-pane fade" id="cheese" role="tabpanel" aria-labelledby="cheese-and-sauce-tab-content">
-              <div class="card" style="width: 18rem;">
-                  <div class="card-header">
-                      Featured
-                  </div>
-                  <ul class="list-group list-group-flush">
-                      <li class="list-group-item">An item</li>
-                      <li class="list-group-item">A second item</li>
-                      <li class="list-group-item">A third item</li>
-                  </ul>
-              </div>
-          </div>
-          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
-      </div>
-      <section class="tab-content" id="size-and-crust">
+<!-- TAB TITLES  -->
 
-              <div class="card-footer">
-                  <button type="button" class="btn btn-primary" id="crust-next-step">Next Step ></button>
-              </div>
-            </div>
-          </div>
+        <div class="container">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active size-tab" id="size-tab" data-bs-toggle="tab" data-bs-target="#size" type="button" role="tab" aria-controls="home" aria-selected="true">Size and Crust</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link cheese-tab" id="cheese-tab" data-bs-toggle="tab" data-bs-target="#cheese" type="button" role="tab" aria-controls="profile" aria-selected="false">Cheese and Sauce</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="toppings-tab" data-bs-toggle="tab" data-bs-target="#toppings" type="button" role="tab" aria-controls="contact" aria-selected="false">Toppings</button>
+                </li>
+            </ul>
 
-      </section>
-      <section class="tab-content" id="cheese-and-toppings-tab">
+<!-- TAB CONTENT -->
+
+            <div class="tab-content" id="myTabContent">
+
+<!-- SIZE AND CRUST TAB -->
+                <div class="tab-pane fade show active size-tab" id="size" role="tabpanel" aria-labelledby="size-tab">
+                    <div class="card size-tab">
+                        <div class="card-body">
+
+<!-- HAND TOSSED CARD -->
+
+                            <div class="card hand-tossed">
+                                <div class="card-header">Hand Tossed</div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                Small (10")
+                                            </label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                                <label class="form-check-label" for="flexRadioDefault2">
+                                                    Medium (12")
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                            </div>
+
+<!-- CRISPY THIN CARD --> <br>
+
+                            <div class="card crispy-thin">
+                                <div class="card-header">Crispy Thin</div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
+                                    <li class="list-group-item">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                Medium (12")
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                Large (14")
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+<!-- CHEESE AND SAUCE TAB -->
+
+                <div class="tab-pane fade show active cheese-tab" id="cheese" role="tabpanel" aria-labelledby="cheese-tab">
+                    <div class="card">
+                        <div class="card-body">
+
+<!-- CHEESE CARD -->
+
+                            <div class="card">
+                                <div class="card-header">Cheese</div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">How much?</li>
+                                    <li class="list-group-item">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Please Select Cheese Amount</option>
+                                            <option value="1">Light</option>
+                                            <option value="2">Normal</option>
+                                            <option value="3">Heavy</option>
+                                        </select>
+                                    </li>
+                                </ul>
+                            </div>
+
+<!-- SAUCE CARD (TOMATO & HOW MUCH) --> <br>
+
+            <!-- WHAT KINDA SAUCE?-->
+                            <div class="card">
+                                <div class="card-header">Sauce</div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">What type?</li>
+                                    <li class="list-group-item">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Please Select Sauce Type</option>
+                                            <option value="1">Tomato</option>
+                                            <option value="2">Alfredo</option>
+                                            <option value="3">Pesto</option>
+                                        </select>
+                                    </li>
+                                </ul>
+            <!-- HOW MUCH DO YA WANT?-->
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">How Much?</li>
+                                    <li class="list-group-item">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Please Select Sauce Type</option>
+                                            <option value="1">Light</option>
+                                            <option value="2">Normal</option>
+                                            <option value="3">Heavy</option>
+                                        </select>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+<!-- TOPPINGS TAB-->
+
+
+                <div class="tab-pane fade show active toppings-tab" id="toppings" role="tabpanel" aria-labelledby="toppings-tab">
+                    <div class="card">
+                        <div class="card-body">
+
+<!-- MEATS CARD -->
+                            <div class="card">
+                                <div class="card-header">Choose Meats</div>
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Beef
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Ham
+                                        </label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
 
 
 
 
 
 
+        </div>
+        <div class="card-footer">
+            Card Footer
+        </div>
 
 
-
-      </section>
   </main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
