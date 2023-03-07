@@ -47,16 +47,32 @@
     //     .css("border-color", "red")
     //     .css("border-style", "solid");
 
-    $("li")
-        .css("font-size", "20px");
+    // $("li")
+    //     .css("font-size", "20px");
+    //
+    // $("h1, p, li")
+    //     .css("background-color",  "yellow");
+    //
+    // $(function(){
+    //     alert($("h1").html())
+    // })
 
-    $("h1, p, li")
-        .css("background-color",  "yellow");
-
-    $(function(){
-        alert($("h1").html())
+    $("h1").click(function(e){
+        $("h1").css("background-color", "violet")
     });
 
+    $("p").dblclick(function(e){
+        $("p").css("font-size", "18px")
+    });
+
+    $("li").hover(
+        function(e){
+            $("li").css("color", "red")
+        },
+        function(e){
+            $("li").css("color", "black")
+        }
+    );
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
