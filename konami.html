@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script src="js/jquery.js"></script>
+<!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script>
+  "use strict";
+
+  var userInput = "";
+  var konami = "3838404037393739656613";
+
+  $(document).keyup(function(e){
+      userInput+= e.keyCode;
+      console.log(userInput);
+      if (userInput === konami){
+          alert("You got 30 lives");
+          // $("document").css("background-color", "pink")
+      }
+  });
+
+
+</script>
+</body>
+</html>
