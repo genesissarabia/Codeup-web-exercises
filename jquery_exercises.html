@@ -1,18 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>jQuery Exercises </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
+
+<h1 class="codeup">Dogs!</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h3 class="codeup">What Are Dogs?</h3>
+                <p>The dog (Canis familiaris[4][5] or Canis lupus familiaris[5]) is a domesticated descendant of the wolf. Also called the domestic dog, it is derived from the extinct Pleistocene wolf,[6][7] and the modern wolf is the dog's nearest living relative.[8](<a href="https://en.wikipedia.org/wiki/Dog")>Wikipedia</a>)</p>
+        </div>
+        <div class="col-6">
+            <h3 class="codeup">Top Favorite Dog Breeds</h3>
+                <ul id="dogs">
+                    <li>Chihuahua</li>
+                    <li>Australian Shepherds</li>
+                    <li>Shiba Inu</li>
+                    <li>American Pit Bull Terrier (Pitties!)</li>
+                    <li>Samoyed</li>
+                    <li>Adopted Pups!</li>
+                </ul>
+        </div>
+    </div>
+</div>
+
+
 
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
 <script>
-    $(function(){
-        alert("Hi, your jQuery works!")
-    });
-</script>
+    // $(function(){
+    //     alert("Hi, your jQuery works!")
+    // });
 
+    // $(function(){
+    //     alert($("#dogs").html());
+    // })
+
+    // $(".codeup")
+    //     .css("border", "1px")
+    //     .css("border-color", "red")
+    //     .css("border-style", "solid");
+
+    $("li")
+        .css("font-size", "20px");
+
+    $("h1, p, li")
+        .css("background-color",  "yellow");
+
+    $(function(){
+        alert($("h1").html())
+    });
+
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
