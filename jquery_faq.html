@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery FAQ</title>
+</head>
+<style>
+    .invisible{
+        visibility: hidden;
+    }
+</style>
+<body>
+
+<h1>CAPYBARAS!</h1>
+
+<p>Capybaras (<em>Hydrochaeris hydrochaeris</em>) are some of the most docile creatures in the world. They are very fluffy and also just very relaxed animals. Much doesn't alarm them but are known to stand their ground when they are feeling threatened. However, if treated with respect, capybaras are cool to hang out with and will even cuddle if they get to know you well!</p>
+
+<p>CAPYBARA FAQS</p>
+
+<dl>
+    <dt>Capybaras Are Actually Rodents!</dt>
+    <dd>Capybaras are the largest rodents in the world! They are 20-24 inches of height on average. They have similar appearances to smaller rodents such as those two front teeth that never stop growing.</dd>
+
+    <dt>Capybaras Are Herbivores</dt>
+    <dd>Their diet consists of plants, fruits and tree bark on land. In the water, they feed on their favorite aquatic plants. Capybaras are also autocoprophagous— they eat their own poop.. This is actually essential to their diet as well. They do so in effort to reabsorb their gut flora and any leftover cellulose they might have missed in the digestion process the first time around.  </dd>
+
+    <dt>Capybaras Around The World</dt>
+    <dd>Capybaras can be found in all of South America except the country of Chile. However, they can also be found in California and Florida, but they are believed to have escaped from conservancies or from owners who brought them from South America (the legality of owning one as a pet varies from state to state in the United States).</dd>
+
+    <dt>Are Capybaras Social Or Anti-Social?</dt>
+    <dd>You might have already guessed from their previous introduction here, but capybaras are very fond of company and quite sociable! They live in herds of anywhere between 10-20 capybaras at a time.</dd>
+
+    <dt>Capybaras And The Waters</dt>
+    <dd>Capybaras are semiaquatic creatures and love to swim. They love the water as much as they love being on land. You can even catch the sleeping underwater with their little snouts sticking out as they still need air to breathe.</dd>
+
+    <dt>Capybara In Different Languages</dt>
+    <dd>Capybaras in South America are referred to as <em>Carpinchos</em>. <em>Carpinchos</em>, means "water hog" and is most commonly used by Argentinians and their surrounding countries.</dd>
+
+    <dt>Capybaras Invade??</dt>
+    <dd>In March 2022, Argentina, a herd of capybaras was said to be invading a wealthy community according to a group of residents who made a complaint to authorities. They were asking to remove the capybaras from their community as they were destroying their gardens and scaring their small dogs. The capybaras had been there since before the community's construction in 1999 and were previously afraid to come out but have become bolder in recent years. They were dubbed as "class warriors" around the world for facing against the wealthy neighborhood. The last known update on the situation comes from Argentina's newsroom, <a href="https://www.lanacion.com.ar/sociedad/atacados-con-bates-y-rifles-asi-viven-hoy-los-carpinchos-en-nordelta-a-un-ano-de-las-denuncias-de-nid09102022/">"La Nacion"</a> indicating that they are still in talks of whether to vasectomize or relocate the animals altogether.</dd>
+
+    <dt>Capybaras As Pets In The United States</dt>
+    <dd>As of 2023, it is legal to own capybaras as pets in Texas, Washington, North Carolina, Arizona, Arkansas, Indiana, Florida, Tennessee. A permit to have a capybara is still required!</dd>
+
+    <dt>They Taste Like What?!</dt>
+    <dd>In South America, capybaras are also an edible meal. There are varying reports on what they taste like but some say it tastes like pork and other fish. Nevertheless, the common agreement seems to be that the texture is definitely reminiscent to red meat. In some Latin American countries it is highly discouraged or even illegal to eat them. </dd>
+
+    <dt>Conservation Of Capybaras</dt>
+    <dd>Thankfully, capybaras are not considered to be in any danger and are listed as "no concern" on the IUCN Endangered Species list. Plenty of capybaras out in the wild!</dd>
+</dl>
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+<script>
+
+    $("dl > dd").addClass("invisible")
+
+        $("dt").click(function(){
+            $(this).next().toggleClass("invisible")
+            }
+        );
+
+
+</script>
+</body>
+</html>
