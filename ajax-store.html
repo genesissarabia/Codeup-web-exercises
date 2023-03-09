@@ -2,22 +2,27 @@
 <html>
 <head>
     <title>Online Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 </head>
 <body>
 
 <h1>My Tool Store</h1>
 
-<table id="products">
-    <thead>
+<table class="table" id="products">
+    <thead class="table-secondary">
         <tr>
-            <th>Title</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Categories</th>
+            <th scope="col">Title</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Categories</th>
         </tr>
     </thead>
     <tbody id="insertProducts" style="text-align: center"></tbody>
 </table>
+
+<button id="refresh" type="button">Refresh</button>
+
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
@@ -38,15 +43,12 @@
                  + "<td>" + tool.categories + "</td>"
                  + "</tr>";
                 $("td").addClass("data");
-
-                console.log(html)
-                console.log(tool.title)
-                console.log(tool.quantity)
             })
             $("#products").append(html);
         })
 
-
+        $("th").addClass("center");
+        $(".center").css("text-align", "center");
 
 
     // TODO: Take the data from inventory.json and append it to the products table
@@ -54,6 +56,10 @@
     //             its contents and fields
     //       HINT: You will want to target #insertProducts for your new HTML elements
 
+        $("#refresh").click(function (){
+                $("#insertProducts").on("data/inventory.json");
+            }
+        );
 
 
 })();
