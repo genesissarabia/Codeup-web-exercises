@@ -8,6 +8,10 @@
     .invisible{
         visibility: hidden;
     }
+
+    .last-li{
+        background-color: yellow;
+    }
 </style>
 <body>
 
@@ -48,13 +52,14 @@
     <dt>Conservation Of Capybaras</dt>
     <dd>Thankfully, capybaras are not considered to be in any danger and are listed as "no concern" on the IUCN Endangered Species list. Plenty of capybaras out in the wild!</dd>
 </dl>
-<button type="button">Click Me!</button>
+<button id="faqs" type="button">Click Me!</button>
 
 <h3>Capybara Foods</h3>
 <ul>
     <li>Reeds</li>
     <li>Tubers</li>
     <li>Melons</li>
+    <li class="list">Squashes</li>
 </ul>
 
 <h3>Capybara Friends</h3>
@@ -62,6 +67,7 @@
     <li>Jacanas</li>
     <li>Monkeys</li>
     <li>Egrets</li>
+    <li class="list">Cowbirds</li>
 </ul>
 
 <h3>Capybara Special Phenotypes</h3>
@@ -69,8 +75,9 @@
     <li>Hoof-like Nails</li>
     <li>Ears and nose high on head to breathe and hear out while underwater</li>
     <li>Front legs are shorter than their rear legs</li>
+    <li class="list">Long barrel shaped body</li>
 </ul>
-
+<button id="ulList" type="button">Click Me!</button>
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 
@@ -78,10 +85,16 @@
 
     $("dl > dd").addClass("invisible")
 
-        $("button").click(function(){
+        $("#faqs").click(function(){
             $("dd").toggleClass("invisible")
             }
         );
+
+
+    $("#ulList").click(function() {
+        $("li:last-child").toggleClass("last-li");
+    });
+
 
 
 </script>
