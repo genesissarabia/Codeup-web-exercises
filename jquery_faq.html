@@ -103,11 +103,14 @@
     });
 
 
-    $("ul").click(function() {
+    $("h3").click(function() {
         $("ul").children().toggleClass("list-bold")
     })
 
-
+    $("li").click(function(){
+        $("li:first-child").toggleClass("first-list")
+        }
+    )
 
 </script>
 </body>
