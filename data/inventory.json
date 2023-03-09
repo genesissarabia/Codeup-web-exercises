@@ -31,11 +31,19 @@
         ],
         "price": 10
 }, {
-    "title": "hi",
+    "title": "Wheelbarrow",
     "quantity": 30,
     "categories": [
-        "what"
+        "tool"
     ],
     "price": 50
+}, {
+    "title": "Jackhammer",
+    "quantity": 22,
+    "categories": [
+        "tool",
+        " powered"
+    ],
+    "price": 2200
 }
 ]
