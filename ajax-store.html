@@ -57,7 +57,20 @@
     //       HINT: You will want to target #insertProducts for your new HTML elements
 
         $("#refresh").click(function (){
-                $("#insertProducts").on("data/inventory.json");
+            $.get("data/inventory.json").done(function (data){
+                let html = "";
+
+                data.forEach(function(tool){
+                    html += "<tr id='table'>" +
+                        "<td>" + tool.title + "</td>"
+                        + "<td>" + tool.quantity + "</td>"
+                        + "<td>" + tool.price + "</td>"
+                        + "<td>" + tool.categories + "</td>"
+                        + "</tr>";
+                    $("td").addClass("data");
+                })
+                $("#insertProducts").html(html);
+            })
             }
         );
 
