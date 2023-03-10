@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Golden Chick",
+    "type": "Franchise",
+    "favorite-dish": "Golden Tenders",
+    "category": [
+      "Fried Chicken"
+    ]
+  }, {
+  "name": "Thai Chalurn",
+  "type": "Family-Owned",
+  "favorite-dish": "Pad Kratiam Prig Thai",
+  "category": [
+    "Thai Food",
+    "Asian Cuisine"
+  ]
+}
+, {
+  "name": "Tacos El Regio",
+  "type": "Food Truck",
+  "favorite-dish": "Asada Quesadilla With Avocado, Cilantro and Onion",
+  "category": [
+    "Mexican Food",
+    "Late-Night Cravings"
+  ]
+}
+
+]
