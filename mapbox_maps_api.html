@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <title>Mapbox API</title>
   <!-- MAPBOX -->
-  <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
-  <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
+
+    <!-- GEOCODER-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' type='text/css' />
     <style>
 
         #map {
@@ -15,28 +20,58 @@
             width: 90vw;
         }
     </style>
+
 </head>
 <body>
 
 
 <div id='map'></div>
-<script>
-    let accessToken = "pk.eyJ1IjoiZ2VuZXNpc3NhcmFiaWEiLCJhIjoiY2xmMnJrOW42MGdjcDN3bzFkYXR3NW4zdSJ9.HC1JwT5SAZLRs5CCcywHSw";
 
-    mapboxgl.accessToken = accessToken;
+
+<script src="js/mapbox_maps_api.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+
+<script>
+    let myToken = "pk.eyJ1IjoiZ2VuZXNpc3NhcmFiaWEiLCJhIjoiY2xmMnJrOW42MGdjcDN3bzFkYXR3NW4zdSJ9.HC1JwT5SAZLRs5CCcywHSw";
+
+    mapboxgl.accessToken = myToken;
 
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v12', // style URL
-        center: [-98.48503860638156, 29.56599326856003], // starting position [lng, lat]
-        zoom: 15, // starting zoom
+        center: [ -98.48008626235448, 29.425988469224475], // starting position [lng, lat]
+        zoom: 8, // starting zoom
     });
+
+    geocode("13802 Embassy Rd, San Antonio, TX 78216", myToken).then(function (result){
+        console.log(result);
+
+        let myMarker = new mapboxgl.Marker();
+        myMarker.setLngLat(result);
+        myMarker.addTo(map);
+
+        let popup = new mapboxgl.Popup();
+
+        popup.setLngLat(result)
+        popup.setHTML("<span>El Bucanero</span>");
+
+        myMarker.setPopup(popup);
+    })
+
+
+
+
+
+
+
 </script>
 
-<script src="js/mapbox_maps_api.js"></script>
+
+
+
 
 <!-- JQUERY SCRIPT -->
-<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
 
 
 </body>
