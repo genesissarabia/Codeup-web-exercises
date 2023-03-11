@@ -1,24 +1,29 @@
 [
   {
-    "name": "Golden Chick",
-    "type": "Franchise",
-    "favorite-dish": "Golden Tenders",
+    "address": "12606 Nacogdoches Rd, San Antonio, TX 78217",
+    "name": "Kostas Greek Food",
+    "type": "Family-Owned",
+    "favorite": "Lamb Chops",
     "category": [
-      "Fried Chicken"
+      "Greek Food",
+      "Mediterranean Food",
+      "Healthy Picks"
     ]
   }, {
+  "address": "4941 Walzem Rd #1, San Antonio, TX 78218",
   "name": "Thai Chalurn",
   "type": "Family-Owned",
-  "favorite-dish": "Pad Kratiam Prig Thai",
+  "favorite": "Pad Kratiam Prig Thai",
   "category": [
     "Thai Food",
     "Asian Cuisine"
   ]
 }
 , {
+  "address": "12757 Nacogdoches Rd, San Antonio, TX 78217",
   "name": "Tacos El Regio",
   "type": "Food Truck",
-  "favorite-dish": "Asada Quesadilla With Avocado, Cilantro and Onion",
+  "favorite": "Asada Quesadilla With Avocado, Cilantro and Onion",
   "category": [
     "Mexican Food",
     "Late-Night Cravings"

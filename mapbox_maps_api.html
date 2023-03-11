@@ -26,12 +26,17 @@
 
 
 <div id='map'></div>
+<div id="restaurants"></div>
 
 
 <script src="js/mapbox_maps_api.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
+<!-- JQUERY SCRIPT -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 
 <script>
+
+
     let myToken = "pk.eyJ1IjoiZ2VuZXNpc3NhcmFiaWEiLCJhIjoiY2xmMnJrOW42MGdjcDN3bzFkYXR3NW4zdSJ9.HC1JwT5SAZLRs5CCcywHSw";
 
     mapboxgl.accessToken = myToken;
@@ -40,37 +45,36 @@
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v12', // style URL
         center: [ -98.48008626235448, 29.425988469224475], // starting position [lng, lat]
-        zoom: 8, // starting zoom
+        zoom: 12, // starting zoom
     });
 
-    geocode("13802 Embassy Rd, San Antonio, TX 78216", myToken).then(function (result){
-        console.log(result);
 
-        let myMarker = new mapboxgl.Marker();
-        myMarker.setLngLat(result);
-        myMarker.addTo(map);
+    $.get("data/mapbox_maps_api.json").done(function(data){
 
-        let popup = new mapboxgl.Popup();
+        data.forEach(function(restaurant){
+            geocode(restaurant.address, myToken).then(function (result){
+                console.log(result);
 
-        popup.setLngLat(result)
-        popup.setHTML("<span>El Bucanero</span>");
+                let myMarker = new mapboxgl.Marker();
+                myMarker.setLngLat(result);
+                myMarker.addTo(map);
 
-        myMarker.setPopup(popup);
+                let popup = new mapboxgl.Popup();
+
+                popup.setLngLat(result)
+                popup.setHTML("<span>" + restaurant.name +"</span>");
+
+                myMarker.setPopup(popup);
+
+            })
+        })
+        $("#restaurants").append(popup);
+
     })
-
-
-
-
-
-
 
 </script>
 
 
-
-
-
-<!-- JQUERY SCRIPT -->
 
 
 
