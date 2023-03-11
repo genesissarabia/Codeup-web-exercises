@@ -48,12 +48,16 @@
         zoom: 12, // starting zoom
     });
 
+    map.addControl(new mapboxgl.NavigationControl());
 
     $.get("data/mapbox_maps_api.json").done(function(data){
 
         data.forEach(function(restaurant){
             geocode(restaurant.address, myToken).then(function (result){
                 console.log(result);
+
+                let startZoom = {center: [ -98.40167580674691, 29.527714007109264], zoom: 11}
+                map.flyTo(startZoom)
 
                 let myMarker = new mapboxgl.Marker();
                 myMarker.setLngLat(result);
@@ -62,7 +66,7 @@
                 let popup = new mapboxgl.Popup();
 
                 popup.setLngLat(result)
-                popup.setHTML("<span>" + restaurant.name +"</span>");
+                popup.setHTML("<h3>" + restaurant.name +"</h3>" + "<p>"+ restaurant.type +"</p>" + "<p>"+ restaurant.category.toString() +"</p>");
 
                 myMarker.setPopup(popup);
 

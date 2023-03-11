@@ -2,21 +2,21 @@
   {
     "address": "12606 Nacogdoches Rd, San Antonio, TX 78217",
     "name": "Kostas Greek Food",
-    "type": "Family-Owned",
+    "type": "Family-Owned Restaurant",
     "favorite": "Lamb Chops",
     "category": [
       "Greek Food",
-      "Mediterranean Food",
-      "Healthy Picks"
+      " Mediterranean Food",
+      " Healthy Picks"
     ]
   }, {
   "address": "4941 Walzem Rd #1, San Antonio, TX 78218",
   "name": "Thai Chalurn",
-  "type": "Family-Owned",
+  "type": "Family-Owned Restaurant",
   "favorite": "Pad Kratiam Prig Thai",
   "category": [
     "Thai Food",
-    "Asian Cuisine"
+    " Asian Cuisine"
   ]
 }
 , {
@@ -26,7 +26,7 @@
   "favorite": "Asada Quesadilla With Avocado, Cilantro and Onion",
   "category": [
     "Mexican Food",
-    "Late-Night Cravings"
+    " Late-Night Cravings"
   ]
 }
 
