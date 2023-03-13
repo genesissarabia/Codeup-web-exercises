@@ -7,6 +7,38 @@
 </head>
 <body>
 
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script>
+
+
+console.log("https://api.openweathermap.org/data/2.5/onecall?lat=29.42479377878848&lon=-98.52403126347599&appid=9ef87df5f87d13fedd3b717fd72d26ae&units=imperial")
+
+$.get("https://api.openweathermap.org/data/2.5/weather?lat=29.42479377878848&lon=-98.52403126347599&appid=9ef87df5f87d13fedd3b717fd72d26ae&units=imperial").done(function (data){
+  console.log(data)
+
+  //geocode for getting coordinates to plug in to mapbox API
+})
+
+function geoCodeBuildWeather(searchString) {
+
+  geocode(searchString, mapBoxAppId).then(function (results) {
+    console.log(results[0])
+    console.log(results[1])
+
+    $.get("https://api.openweathermap.org/data/2.5/weather?lat=${results[0]}&lon=-${results[1]}&appid=${openWeatherAppId}&units=imperial").done(function (data){
+      console.log(data)
+
+
+  })})
+}
+console.log(geoCodeBuildWeather("Pike Place Fish Market"))
+
+//flyTo searchString in mapbox whenever the person searches a new location
+
+
+</script>
 
 </body>
 </html>
