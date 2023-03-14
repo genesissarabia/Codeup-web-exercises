@@ -4,66 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather Map Project</title>
+  <!-- MAPBOX -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
+  <style>
+    #map {
+      border: 3px solid black;
+      margin: 5em 1em;
+      height: 40vh;
+      width: 90vw;
+    }
+  </style>
+
 </head>
 <body>
 
 <h1>Weather App</h1>
 
+<input type="text" placeholder="Search for weather" id="searchInput"> <button id="weatherSearch">Click here to search</button>
+
 <div id="weatherBody"></div>
 
+<div id='map'></div>
 
+
+
+<!-- JAVASCRIPT & JQUERY -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-<script>
+<script src="js/weather_map.js"></script>
 
-
-
-
-function geoCodeBuildWeather(searchString) {
-
-  geocode(searchString, mapBoxAppId).then(function (results) {
-
-
-    let html = "";
-
-    console.log(results[0])
-    console.log(results[1])
-
-    $.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${results[1]}&lon=${results[0]}&appid=${openWeatherAppId}&units=imperial`).done(function (data){
-      console.log(data)
-
-      for(i = 0; i <= 39; i+=8) {
-
-        html += `<h4>Date: ${data.list[i].dt_txt}</h4>`;
-
-        html += `<h5>Min & Max: ${data.list[i].main.temp_min}&deg; / ${data.list[0].main.temp_max}&deg;</h5>`;
-
-        html+= "<img class='icons'>"
-
-        $(".icons").append('src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png"');
-
-        // "http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png"
-
-        html += `<h5>Description: ${data.list[i].weather[0].description}</h5>`;
-
-        html += `<h5>Humidity: ${data.list[i].main.humidity}</h5>`;
-
-        html += `<h5>Wind: ${parseInt(data.list[i].wind.speed)}</h5>`;
-
-        html += `<h5>Pressure: ${data.list[i].main.pressure}</h5>`;
-      }
-
-      $("#weatherBody").html(html);
-
-  })})
-}
-geoCodeBuildWeather("Pike Place Fish Market")
-
-//flyTo searchString in mapbox whenever the person searches a new location
-
-
-</script>
 
 </body>
 </html>
