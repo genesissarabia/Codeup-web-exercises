@@ -58,8 +58,8 @@ const map = new mapboxgl.Map({
 const marker = new mapboxgl.Marker({
     draggable: true
 })
-    .setLngLat([ -98.48008626235448, 29.425988469224475])
-    .addTo(map);
+    marker.setLngLat([ -98.48008626235448, 29.425988469224475])
+    marker.addTo(map);
 
 marker.on("dragend", function(e) {
     let coordinates = e.target._lngLat;
