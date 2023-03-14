@@ -7,33 +7,58 @@
 </head>
 <body>
 
+<h1>Weather App</h1>
+
+<div id="weatherBody"></div>
+
+
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 <script>
 
 
-console.log("https://api.openweathermap.org/data/2.5/onecall?lat=29.42479377878848&lon=-98.52403126347599&appid=9ef87df5f87d13fedd3b717fd72d26ae&units=imperial")
 
-$.get("https://api.openweathermap.org/data/2.5/weather?lat=29.42479377878848&lon=-98.52403126347599&appid=9ef87df5f87d13fedd3b717fd72d26ae&units=imperial").done(function (data){
-  console.log(data)
-
-  //geocode for getting coordinates to plug in to mapbox API
-})
 
 function geoCodeBuildWeather(searchString) {
 
   geocode(searchString, mapBoxAppId).then(function (results) {
+
+
+    let html = "";
+
     console.log(results[0])
     console.log(results[1])
 
-    $.get("https://api.openweathermap.org/data/2.5/weather?lat=${results[0]}&lon=-${results[1]}&appid=${openWeatherAppId}&units=imperial").done(function (data){
+    $.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${results[1]}&lon=${results[0]}&appid=${openWeatherAppId}&units=imperial`).done(function (data){
       console.log(data)
 
+      for(i = 0; i <= 39; i+=8) {
+
+        html += `<h4>Date: ${data.list[i].dt_txt}</h4>`;
+
+        html += `<h5>Min & Max: ${data.list[i].main.temp_min}&deg; / ${data.list[0].main.temp_max}&deg;</h5>`;
+
+        html+= "<img class='icons'>"
+
+        $(".icons").append('src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png"');
+
+        // "http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png"
+
+        html += `<h5>Description: ${data.list[i].weather[0].description}</h5>`;
+
+        html += `<h5>Humidity: ${data.list[i].main.humidity}</h5>`;
+
+        html += `<h5>Wind: ${parseInt(data.list[i].wind.speed)}</h5>`;
+
+        html += `<h5>Pressure: ${data.list[i].main.pressure}</h5>`;
+      }
+
+      $("#weatherBody").html(html);
 
   })})
 }
-console.log(geoCodeBuildWeather("Pike Place Fish Market"))
+geoCodeBuildWeather("Pike Place Fish Market")
 
 //flyTo searchString in mapbox whenever the person searches a new location
 
