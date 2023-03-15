@@ -9,6 +9,11 @@
   <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
   <!-- BOOTSTRAP -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
   <style>
     #map {
       border: 3px solid black;
@@ -18,21 +23,21 @@
     }
 
     body{
-      background-image: url("img/pexels-ithalu-dominguez-907485.jpg");
+      background-image: url("img/efecto-atmosferico.jpg");
     }
   </style>
 
 </head>
 <body>
 
-<nav class="navbar navbar-light" style="background: #847477">
+<nav class="navbar">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img src="img/icons8-weather-64.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
-      Parhelion
+      <img src="img/icons8-weather-64.png" alt="" width="60" height="48" class="d-inline mb-3">
+      <h1 class="d-inline" style="color: #FFB703; font-family: Montserrat, sans-serif;">Parhelion</h1>
     </a>
     <form class="d-flex">
-      <input class="form-control me-2" type="text" placeholder="Search for weather" id="searchInput"> <button id="weatherSearch" class="btn btn-outline-success" type="submit">Click here to search</button>
+      <input class="form-control me-2 d-flex justify-content-center" type="text" placeholder="Search for weather" id="searchInput"> <button id="weatherSearch" class="btn d-flex justify-content-center" style="background-color: #1C8765" type="submit">Search</button>
     </form>
   </div>
 </nav>
@@ -41,6 +46,12 @@
 <div id="container">
 
 <div class="row d-flex justify-content-center">
+
+  <nav class="navbar">
+    <div class="container-fluid d-flex justify-content-center">
+      <span class="navbar-brand mb-0 h1" id="city"></span>
+    </div>
+  </nav>
 
 <div class="col-12 d-flex flex-wrap justify-content-center pt-2 pb-0" id="weatherBody"></div>
 

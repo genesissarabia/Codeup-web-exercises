@@ -1,27 +1,27 @@
-// "use strict"
-
 
 // FORECAST INFORMATION
 function geoCodeBuildForecast(searchString) {
     let html = "";
     geocode(searchString, mapBoxAppId).then(function (results1) {
+
+
         let markerFlyTo = {center: results1, zoom: 12}
         map.flyTo(markerFlyTo);
         marker.setLngLat(results1)
 
         html += `<div class="row">`
 
-
+        // console.log(`https://api.openweathermap.org/data/2.5/forecast?lat=${results1[1]}&lon=${results1[0]}&appid=${openWeatherAppId}&units=imperial`);
         $.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${results1[1]}&lon=${results1[0]}&appid=${openWeatherAppId}&units=imperial`).done(function (data) {
 
             for (var i = 0; i <= 39; i += 8) {
 
 
-                html += `<div class="col-2 card mx-2" style="color: #F0F0F0">`
+                html += `<div class="col-2 card mx-2" style="color: #F0F0F0; font-family: Inter, sans-serif;">`
 
-                html += `<img class='icons card-img-top' src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png">`
+                html += `<img class='icons card-img-top' width="10" height="90" src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png">`
 
-                html += `<div class="card-body" style="background: #A4DDED">`
+                html += `<div class="card-body" style="background: #8ECAE6">`
 
                 html += `<h4 class="card-title">Date: ${data.list[i].dt_txt}</h4>`;
 
@@ -30,7 +30,7 @@ function geoCodeBuildForecast(searchString) {
 
                 html += `<p class="card-text">Description: ${data.list[i].weather[0].description}</p>`;
 
-                html += `<p class="card-text">Humidity: ${data.list[i].main.humidity}</p>`;
+                html += `<p class="card-text">Humidity: ${data.list[i].main.humidity}%</p>`;
 
                 html += `<p class="card-text"Wind: ${parseInt(data.list[i].wind.speed)}</p>`;
 
@@ -47,6 +47,9 @@ function geoCodeBuildForecast(searchString) {
 
             $("#weatherBody").html(html);
 
+            let city = "";
+            city += `<h4 class="d-flex justify-content-center align-content-center" style="font-family: Inter, sans-serif; color: #FB8500">Current Location: ${data.city.name}</h4>`
+            $("#city").html(city);
         })
         html = "";
     })
@@ -81,18 +84,17 @@ marker.on("dragend", function(e) {
      let html="";
 
     let coordinates = e.target._lngLat;
-    reverseGeocode({lat: coordinates.lat, lng: coordinates.lng}, mapBoxAppId).then(function (results) {
 
-        $.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${results[1]}&lon=${results[0]}&appid=${openWeatherAppId}&units=imperial`).done(function (data){
-
+        $.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lng
+        }&appid=${openWeatherAppId}&units=imperial`).done(function (data){
 
             for (var i = 0; i <= 39; i += 8) {
 
-                html += `<div class="col-2 card mx-2 text-light">`
+                html += `<div class="col-2 card mx-2" style="color: #F0F0F0; font-family: Inter, sans-serif;">`
 
-                html += `<img class='icons card-img-top' src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png">`
+                html += `<img class='icons card-img-top' width="10" height="90" src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png">`
 
-                html += `<div class="card-body" style="background: #A4DDED">`
+                html += `<div class="card-body" style="background: #8ECAE6">`
 
                 html += `<h4 class="card-title">Date: ${data.list[i].dt_txt}</h4>`;
 
@@ -101,7 +103,7 @@ marker.on("dragend", function(e) {
 
                 html += `<p class="card-text">Description: ${data.list[i].weather[0].description}</p>`;
 
-                html += `<p class="card-text">Humidity: ${data.list[i].main.humidity}</p>`;
+                html += `<p class="card-text">Humidity: ${data.list[i].main.humidity}%</p>`;
 
                 html += `<p class="card-text"Wind: ${parseInt(data.list[i].wind.speed)}</p>`;
 
@@ -114,8 +116,17 @@ marker.on("dragend", function(e) {
                 html += `</div>` //column
 
             }
+            html += `</div>`
+
+
             $("#weatherBody").html(html);
+            console.log(data);
+            let city = "";
+            city += `<h4 class="d-flex justify-content-center align-content-center" style="font-family: Inter, sans-serif; color: #FB8500">Current Location: ${data.city.name}</h4>`
+            $("#city").html(city);
 
         })
     })
-})
+
+
+geoCodeBuildForecast("San Antonio, TX");
