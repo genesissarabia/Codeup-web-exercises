@@ -11,11 +11,12 @@ function geoCodeBuildForecast(searchString) {
 
         html += `<div class="row">`
 
-        // console.log(`https://api.openweathermap.org/data/2.5/forecast?lat=${results1[1]}&lon=${results1[0]}&appid=${openWeatherAppId}&units=imperial`);
         $.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${results1[1]}&lon=${results1[0]}&appid=${openWeatherAppId}&units=imperial`).done(function (data) {
-
+            console.log(data)
             for (var i = 0; i <= 39; i += 8) {
 
+                let date = new Date((data.list[i].dt) * 1000);
+                let forecastDate = date.toLocaleDateString("en-US");
 
                 html += `<div class="col-2 card mx-2" style="color: #F0F0F0; font-family: Inter, sans-serif;">`
 
@@ -23,7 +24,7 @@ function geoCodeBuildForecast(searchString) {
 
                 html += `<div class="card-body" style="background: #8ECAE6">`
 
-                html += `<h4 class="card-title">Date: ${data.list[i].dt_txt}</h4>`;
+                html += `<h4 class="card-title">Date: ${forecastDate}</h4>`;
 
                 html += `<p class="card-text">Min & Max: ${data.list[i].main.temp_min}&deg; / ${data.list[0].main.temp_max}&deg;</p>`;
 
@@ -90,13 +91,16 @@ marker.on("dragend", function(e) {
 
             for (var i = 0; i <= 39; i += 8) {
 
+                let date = new Date((data.list[i].dt) * 1000);
+                let forecastDate = date.toLocaleDateString("en-US");
+
                 html += `<div class="col-2 card mx-2" style="color: #F0F0F0; font-family: Inter, sans-serif;">`
 
                 html += `<img class='icons card-img-top' width="10" height="90" src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png">`
 
                 html += `<div class="card-body" style="background: #8ECAE6">`
 
-                html += `<h4 class="card-title">Date: ${data.list[i].dt_txt}</h4>`;
+                html += `<h4 class="card-title">Date: ${forecastDate}</h4>`;
 
                 html += `<p class="card-text">Min & Max: ${data.list[i].main.temp_min}&deg; / ${data.list[0].main.temp_max}&deg;</p>`;
 
@@ -120,7 +124,7 @@ marker.on("dragend", function(e) {
 
 
             $("#weatherBody").html(html);
-            console.log(data);
+
             let city = "";
             city += `<h4 class="d-flex justify-content-center align-content-center" style="font-family: Inter, sans-serif; color: #FB8500">Current Location: ${data.city.name}</h4>`
             $("#city").html(city);
@@ -130,3 +134,20 @@ marker.on("dragend", function(e) {
 
 
 geoCodeBuildForecast("San Antonio, TX");
+
+// function geoCodeBuildPollution (searchString) {
+//     let html = "";
+//     geocode(searchString, mapBoxAppId).then(function (results) {
+//         console.log(results);
+//         $.get(`http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=${results[1]}&lon=${results[0]}&appid=${openWeatherAppId}`).done(function (data){
+//             alert(data)
+//         })
+//         $("#weatherBody").html(html);
+//     })
+//     $("#weatherSearch").click(function (e) {
+//         e.preventDefault();
+//         geoCodeBuildForecast($("#searchInput").val());
+//     })
+// }
+
+
