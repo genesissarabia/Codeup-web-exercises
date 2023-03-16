@@ -14,47 +14,40 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
-  <style>
-    #map {
-      border: 3px solid black;
-      margin: 5em 1em;
-      height: 40vh;
-      width: 90vw;
-    }
-
-    body{
-      background-image: url("img/efecto-atmosferico.jpg");
-    }
-  </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/weather_map.css">
 
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <img src="img/icons8-weather-64.png" alt="" width="60" height="48" class="d-inline mb-3">
       <h1 class="d-inline" style="color: #FFB703; font-family: Montserrat, sans-serif;">Parhelion</h1>
     </a>
+
+<!-- SEARCH BOX & SEARCH BUTTON -->
     <form class="d-flex">
-      <input class="form-control me-2 d-flex justify-content-center" type="text" placeholder="Search for weather" id="searchInput"> <button id="weatherSearch" class="btn d-flex justify-content-center" style="background-color: #1C8765" type="submit">Search</button>
+      <input class="form-control me-2 d-flex justify-content-center" type="search" placeholder="Search for weather" id="searchInput"> <button id="weatherSearch" class="btn d-flex justify-content-center" style="background-color: #1C8765" type="submit">Search</button>
     </form>
   </div>
 </nav>
 
-
+<!-- WEATHER CARDS SECTION -->
 <div id="container">
 
 <div class="row d-flex justify-content-center">
-
+  <!-- CURRENT LOCATION -->
   <nav class="navbar">
     <div class="container-fluid d-flex justify-content-center">
       <span class="navbar-brand mb-0 h1" id="city"></span>
     </div>
   </nav>
-
-<div class="col-12 d-flex flex-wrap justify-content-center pt-2 pb-0" id="weatherBody"></div>
-
+  <!-- CARDS -->
+<div class="col-12 d-flex flex-wrap justify-content-center pt-2 pb-0 fade-in-text" id="weatherBody"></div>
+  <!-- MAP -->
 <div class="col-12" id='map'></div>
 
 </div>
